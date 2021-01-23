@@ -11,6 +11,7 @@ module.exports = class CloudflarePageRules {
 
     request (endpoint, method = 'GET', body) {
         return new Promise((resolve) => {
+            if (body) body = JSON.stringify(body);
             fetch(`${this.baseURL}${endpoint}`, {
                 body,
                 method,
