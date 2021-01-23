@@ -15,18 +15,18 @@ const CloudflarePageRules = require('cloudflare-page-rules');
 const cloudflare = new CloudflarePageRules('token');
 
 cloudflare.list('zone ID');
-cloudflare.details('zone ID', 'page rule ID');
-cloudflare.delete('zone ID', 'page rule ID');
-cloudflare.update('zone ID', 'page rule ID', {
+cloudflare.details('page rule ID', 'zone ID');
+cloudflare.delete('page rule ID', 'zone ID');
+cloudflare.update('page rule ID', {
     targets: [],
     actions: []
-});
-cloudflare.edit('zone ID', 'page rule ID', {
+}, 'zone ID');
+cloudflare.edit('page rule ID', {
     targets: [],
     actions: []
-});
+}, 'zone ID');
 cloudflare.create('zone ID', {
     targets: [],
     actions: []
-});
+}, 'zone ID');
 ```

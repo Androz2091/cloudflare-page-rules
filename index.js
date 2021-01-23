@@ -29,33 +29,33 @@ module.exports = class CloudflarePageRules {
         return this.request(`zones/${zoneScope || this.zoneScope}/pagerules`);
     }
 
-    create (zoneScope, pageRuleOptions) {
+    create (pageRuleOptions, zoneScope) {
         if (!zoneScope && !this.zoneScope) throw new Error('Missing zone ID');
         if (!pageRuleOptions) throw new Error('Missing Page Rule Object');
         return this.request(`zones/${zoneScope || this.zoneScope}/pagerules`, 'POST', pageRuleOptions);
     }
 
-    details (zoneScope, pageRuleID) {
+    details (pageRuleID, zoneScope) {
         if (!zoneScope && !this.zoneScope) throw new Error('Missing zone ID');
         if (!pageRuleID) throw new Error('Missing Page Rule ID');
         return this.request(`zones/${zoneScope || this.zoneScope}/pagerules/${pageRuleID}`);
     }
 
-    update (zoneScope, pageRuleID, pageRuleOptions) {
+    update (pageRuleID, pageRuleOptions, zoneScope) {
         if (!zoneScope && !this.zoneScope) throw new Error('Missing zone ID');
         if (!pageRuleID) throw new Error('Missing Page Rule ID');
         if (!pageRuleOptions) throw new Error('Missing Page Rule Object');
         return this.request(`zones/${zoneScope || this.zoneScope}/pagerules/${pageRuleID}`, 'PUT', pageRuleOptions);
     }
 
-    edit (zoneScope, pageRuleID, pageRuleOptions) {
+    edit (pageRuleID, pageRuleOptions, zoneScope) {
         if (!zoneScope && !this.zoneScope) throw new Error('Missing zone ID');
         if (!pageRuleID) throw new Error('Missing Page Rule ID');
         if (!pageRuleOptions) throw new Error('Missing Page Rule Object');
         return this.request(`zones/${zoneScope || this.zoneScope}/pagerules/${pageRuleID}`, 'PATCH', pageRuleOptions);
     }
 
-    delete (zoneScope, pageRuleID, pageRuleOptions) {
+    delete (pageRuleID, pageRuleOptions, zoneScope) {
         if (!zoneScope && !this.zoneScope) throw new Error('Missing zone ID');
         if (!pageRuleID) throw new Error('Missing Page Rule ID');
         if (!pageRuleOptions) throw new Error('Missing Page Rule Object');
