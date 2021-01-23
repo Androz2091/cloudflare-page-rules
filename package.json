@@ -1,6 +1,7 @@
 {
     "name": "cloudflare-page-rules",
     "version": "1.0.2",
+    "funding": "https://github.com/sponsors/Androz2091",
     "main": "index.js",
     "author": "Androz2091 <androz2091@gmail.com>",
     "license": "MIT",

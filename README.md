@@ -25,7 +25,7 @@ cloudflare.edit('page rule ID', {
     targets: [],
     actions: []
 }, 'zone ID');
-cloudflare.create('zone ID', {
+cloudflare.create({
     targets: [],
     actions: []
 }, 'zone ID');
